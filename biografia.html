@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Edison De Jesús Abreu">
+  <meta name="description" content="Biografía de Edison De Jesús Abreu, desarrollador de software y creador de contenido digital dominicano.">
+  <title>Edison De Jesús Abreu | Biografía</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #f7f6f2;
+      --ink: #20221f;
+      --muted: #73756f;
+      --line: #deded6;
+      --accent: #8b6d45;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.75;
+    }
+
+    .topbar {
+      max-width: var(--max);
+      margin: auto;
+      padding: 25px 34px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      font-size: 12px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .mark {
+      font-weight: 700;
+      letter-spacing: .18em;
+    }
+
+    .edition { color: var(--muted); }
+
+    .hero {
+      max-width: var(--max);
+      margin: auto;
+      padding: 100px 34px 86px;
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 70px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 1.04;
+      letter-spacing: -.045em;
+      margin: 0;
+    }
+
+    .subtitle {
+      margin-top: 25px;
+      font-size: 17px;
+      color: var(--muted);
+    }
+
+    .hero-note {
+      border-left: 1px solid var(--accent);
+      padding-left: 19px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero-note strong {
+      display: block;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .rule {
+      border: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .layout {
+      max-width: var(--max);
+      margin: auto;
+      padding: 70px 34px 100px;
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 80px;
+    }
+
+    .toc {
+      position: sticky;
+      top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .toc-label {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 12px;
+      transition: color .2s;
+    }
+
+    .toc a:hover { color: var(--accent); }
+
+    .intro {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 25px;
+      line-height: 1.55;
+      margin: 0 0 62px;
+    }
+
+    .section {
+      padding-bottom: 48px;
+      margin-bottom: 48px;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 35px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .number {
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: .12em;
+    }
+
+    h2 {
+      font-size: 31px;
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 21px;
+      margin: 15px 0 9px;
+    }
+
+    p {
+      margin: 0 0 17px;
+      color: #484a45;
+      font-size: 15px;
+    }
+
+    .date {
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 30px 0 8px;
+    }
+
+    .project {
+      padding-left: 20px;
+      border-left: 1px solid var(--line);
+      margin-top: 28px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      max-width: var(--max);
+      margin: auto;
+      padding: 25px 34px 40px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .signature {
+      color: var(--ink);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 720px) {
+      .topbar {
+        padding: 19px 22px;
+      }
+
+      .hero {
+        padding: 72px 22px 60px;
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .layout {
+        padding: 48px 22px 70px;
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .toc {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 9px 18px;
+      }
+
+      .toc-label { width: 100%; }
+
+      .intro { font-size: 22px; }
+
+      h2 { font-size: 27px; }
+
+      .footer {
+        padding: 22px;
+        flex-direction: column;
+      }
+    }
+
+    @media print {
+      body { background: white; }
+      .topbar, .toc { display: none; }
+      .layout { display: block; }
+      .section { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="mark">E. J. A.</div>
+  <div class="edition">Perfil biográfico · República Dominicana</div>
+</header>
+
+<section class="hero">
+  <div>
+    <p class="eyebrow">Biografía</p>
+    <h1>Edison De Jesús Abreu</h1>
+    <p class="subtitle">
+      Desarrollador de software · Ingeniero de software ·
+      Creador de contenido digital
+    </p>
+  </div>
+
+  <div class="hero-note">
+    <strong>Distrito Nacional</strong>
+    Santo Domingo, República Dominicana<br>
+    Nacido el 10 de agosto de 1993
+  </div>
+</section>
+
+<hr class="rule">
+
+<div class="layout">
+
+  <aside>
+    <nav class="toc">
+      <span class="toc-label">Contenido</span>
+      <a href="#origenes">Orígenes</a>
+      <a href="#formacion">Formación académica</a>
+      <a href="#trayectoria">Trayectoria profesional</a>
+      <a href="#edbellaco">EdBellaco</a>
+      <a href="#classic">Bellaco Classic</a>
+      <a href="#enfoque">Enfoque creativo</a>
+    </nav>
+  </aside>
+
+  <main>
+
+    <p class="intro">
+      Edison De Jesús Abreu (Distrito Nacional, Santo Domingo,
+      República Dominicana, 10 de agosto de 1993) es un
+      desarrollador de software y creador de contenido digital
+      dominicano, licenciado en Ciencias de la Computación.
+      Su trayectoria profesional comprende el desarrollo de
+      aplicaciones, la ingeniería de software y la automatización
+      de procesos. Paralelamente, ha desarrollado proyectos de
+      comunicación digital relacionados con las dinámicas sociales,
+      las relaciones interpersonales, la filosofía y la divulgación
+      de contenidos bíblicos.
+    </p>
+
+    <section class="section" id="origenes">
+      <div class="section-head">
+        <span class="number">01</span>
+        <h2>Orígenes y entorno familiar</h2>
+      </div>
+
+      <p>
+        Edison De Jesús Abreu nació el 10 de agosto de 1993
+        en el Distrito Nacional, Santo Domingo,
+        República Dominicana.
+      </p>
+
+      <p>
+        Creció en un entorno familiar vinculado a la música
+        y la educación. Desde temprana edad manifestó interés
+        por la ciencia computacional y la electrónica.
+        Su curiosidad se centró especialmente en comprender
+        los principios lógicos, estructurales y abstractos
+        que permiten el funcionamiento de los sistemas tecnológicos.
+      </p>
+    </section>
+
+    <section class="section" id="formacion">
+      <div class="section-head">
+        <span class="number">02</span>
+        <h2>Formación académica</h2>
+      </div>
+
+      <p>
+        En 2015 realizó una formación técnica en desarrollo
+        de aplicaciones en el Instituto Nacional de Formación
+        Técnico Profesional (INFOTEP), donde adquirió conocimientos
+        relacionados con la programación y el desarrollo de software.
+      </p>
+
+      <p>
+        En 2017 comenzó sus estudios universitarios en Ciencias
+        de la Computación en la Universidad Federico Henríquez
+        y Carvajal (UFHEC). Paralelamente, ya se encontraba
+        incorporado al mercado laboral como desarrollador web,
+        trabajando principalmente con tecnologías como PHP
+        y JavaScript.
+      </p>
+
+      <p>
+        Debido a las exigencias de su actividad profesional,
+        interrumpió temporalmente sus estudios universitarios
+        durante aproximadamente tres años. En 2023 retomó
+        su formación académica y en mayo de 2025 obtuvo
+        el título de licenciado en Ciencias de la Computación.
+      </p>
+    </section>
+
+    <section class="section" id="trayectoria">
+      <div class="section-head">
+        <span class="number">03</span>
+        <h2>Trayectoria profesional</h2>
+      </div>
+
+      <p>
+        Abreu inició su carrera profesional en el desarrollo
+        de software poco después de completar su formación
+        técnica en 2015. Sus primeros trabajos estuvieron
+        relacionados con la creación de aplicaciones web
+        y soluciones informáticas utilizando PHP, JavaScript
+        y bases de datos.
+      </p>
+
+      <p>
+        Posteriormente amplió su experiencia hacia el desarrollo
+        de sistemas empresariales, tecnologías Oracle,
+        programación PL/SQL y automatización de procesos.
+        Su trayectoria incluye la participación en proyectos
+        de software orientados a resolver necesidades operativas
+        y mejorar procedimientos mediante herramientas tecnológicas.
+      </p>
+
+      <p>
+        Su actividad profesional se ha mantenido vinculada
+        al sector de la tecnología y la ingeniería de software.
+      </p>
+    </section>
+
+    <section class="section" id="edbellaco">
+      <div class="section-head">
+        <span class="number">04</span>
+        <h2>Creación de contenido digital</h2>
+      </div>
+
+      <div class="project">
+        <div class="date">2021–2026</div>
+        <h3>EdBellaco</h3>
+
+        <p>
+          En 2021 desarrolló EdBellaco, un proyecto de comunicación
+          digital enfocado inicialmente en las relaciones sentimentales,
+          las dinámicas de pareja y el comportamiento interpersonal.
+        </p>
+
+        <p>
+          El proyecto alcanzó una audiencia significativa en
+          República Dominicana y consiguió difusión entre usuarios
+          de otros países. Su contenido abordaba cuestiones
+          relacionadas con las relaciones entre hombres y mujeres,
+          las expectativas sentimentales y los comportamientos sociales.
+        </p>
+
+        <p>
+          Durante sus primeros años, la propuesta estuvo vinculada
+          a temáticas asociadas con el movimiento Red Pill,
+          una corriente de contenido centrada en determinadas
+          interpretaciones de las relaciones entre hombres y mujeres.
+        </p>
+
+        <p>
+          En 2026 Abreu inició una transformación de la línea
+          editorial del proyecto. Esta nueva etapa se orientó
+          hacia la divulgación de historias y contenidos bíblicos,
+          especialmente del Antiguo Testamento, incorporando
+          elementos de comedia, educación y reflexión.
+        </p>
+      </div>
+
+      <div class="project" id="classic">
+        <div class="date">9 de noviembre de 2026</div>
+        <h3>Bellaco Classic</h3>
+
+        <p>
+          El 9 de noviembre de 2026 presentó Bellaco Classic,
+          un proyecto digital que recupera la temática original
+          de EdBellaco, particularmente el análisis de las
+          relaciones sentimentales y las dinámicas de pareja.
+        </p>
+
+        <p>
+          La propuesta utiliza un formato narrativo acompañado
+          de ilustraciones, con apariciones ocasionales del propio
+          creador frente a cámara. Este recurso busca combinar
+          la narración audiovisual con una presencia más personal
+          y humana.
+        </p>
+
+        <p>
+          El proyecto representa una nueva etapa de exploración
+          creativa, en la que Abreu retoma temas que caracterizaron
+          sus primeros años como creador de contenido, utilizando
+          recursos visuales y narrativos para desarrollar sus publicaciones.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="enfoque">
+      <div class="section-head">
+        <span class="number">05</span>
+        <h2>Enfoque creativo</h2>
+      </div>
+
+      <p>
+        La producción digital de Abreu se caracteriza por abordar
+        temas que generan discusión social, particularmente
+        las relaciones humanas, los comportamientos interpersonales
+        y las interpretaciones culturales.
+      </p>
+
+      <p>
+        En sus proyectos ha experimentado con diferentes formatos
+        de comunicación, entre ellos la narración ilustrada,
+        el comentario social, el humor y la divulgación educativa.
+      </p>
+
+      <p>
+        Su actividad combina dos áreas de interés:
+        el desarrollo tecnológico y la comunicación digital.
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <span class="signature">Edison De Jesús Abreu</span>
+  <span>Perfil biográfico · República Dominicana</span>
+</footer>
+
+</body>
+</html>
